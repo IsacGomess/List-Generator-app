@@ -76,13 +76,15 @@ body{
     margin: 0;
   }
 
-  #enter,#userinput {
-    width:10%;
+  .boxmodel{
+    display: flex;
     justify-content: center;
-    display:flex;
-    margin: 10px auto;
-    padding: 1px;
+    flex-grow: 1;
+    margin: 20px 0;
+  }
+  #enter,#userinput {
     text-align: center;
+    margin: 0 5px;
   
   }
 
@@ -109,7 +111,7 @@ li{
 
 #listItems{
   margin: 0  auto;
-  width: 65%;
+  width: 35%;
   text-align: center;
-  border: 2px solid white;
+  border: 1px solid white;
 }
