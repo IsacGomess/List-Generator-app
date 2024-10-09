@@ -1,7 +1,6 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
-var ol = document.querySelector("ol");
-var sel = document.querySelectorAll('li');
+var ol = document.querySelector(".list-group");
 
 
 
@@ -10,18 +9,18 @@ function inputLength() {
 }
 
 function createListElement(e) {
-	var li = document.createElement("li");
+	let li = document.createElement('li');
 	li.appendChild(document.createTextNode(input.value));
+	li.setAttribute('class','list-group-item');
 	ol.appendChild(li);
-	e.target.classList.add(" list-group-numbered")
-	var bt = document.createElement("button");
+	var bt = document.createElement('button');
 	bt.className = "btitens";
 	bt.textContent = 'x';
 	li.appendChild(bt);
 	bt.addEventListener('click',function(){
-		li.parentNode.removeChild(li)
+		li.remove()
 	})
-	input.value = "";
+	input.value = " ";
 
 }
 
