@@ -1,18 +1,27 @@
 body{
   margin: 0;
+  background: url(img/img-caderno.jpg.jpeg) no-repeat center center/cover;
+  height: 100vh;
   font:'Raleway','sans serif';
   color: rgba(0,0,0,.5);
 }
 
-.done {
-    text-decoration: line-through;
-}
+
 /*input texto*/
+.container{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: antiquewhite;
+  border-radius: 15px;
+  left: 40em;
+  bottom: 3em;
+  height: 30px;
+}
 .boxmodel{
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    margin: 20px 0;
+  position: absolute;
+  justify-content: center;
+  margin: 20px 0;
 }
 #userinput{
   border-radius:10px;
@@ -26,14 +35,14 @@ body{
 }
 #enter{
   border: none;
-  border-radius: 7px;
+  border-radius: 12px;
   background-color:cadetblue;
   color: white;
   box-shadow: 0 0 2px wheat;
 }
 #enter:hover{
-  background-color: white;
-  color: black;
+  background-color: black;
+  color:cadetblue;
 }
 
 li{
