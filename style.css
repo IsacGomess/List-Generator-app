@@ -8,41 +8,45 @@ body{
 
 
 /*input texto*/
-.container{
-  display: flex;
-  justify-content: center;
-  position: relative;
-  background-color: antiquewhite;
-  border-radius: 15px;
-  left: 40em;
-  bottom: 3em;
-  height: 30px;
-}
 .boxmodel{
   position: absolute;
+  left: 45%;
+  display: flex;
   justify-content: center;
   margin: 20px 0;
 }
-#userinput{
-  border-radius:10px;
-  box-shadow: 0 0 3px black;
-  background: transparent;
+.container{
+  width: 189px;
+  height: 100px;
 }
-#enter,#userinput {
-    text-align: center;
-    margin: 0 5px;
-  
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color:beige;
 }
 #enter{
+  height: 35px;
+  text-align: center;
+  margin: 0 5px;
   border: none;
   border-radius: 12px;
   background-color:cadetblue;
   color: white;
   box-shadow: 0 0 2px wheat;
+  
 }
 #enter:hover{
   background-color: black;
   color:cadetblue;
+}
+#entertext{
+  justify-content: center;
+  height: 35px;
+  border-radius: 15px;
+  box-shadow: 0 0 3px black;
+  background: transparent;
 }
 
 li{
