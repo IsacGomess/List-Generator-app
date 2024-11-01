@@ -1,6 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("entertext");
 var ol = document.querySelector(".list-group");
+var additem = document.getElementById("additem");
 
 
 
@@ -35,7 +36,14 @@ function addListAfterKeypress(event) {
 		createListElement();
 	}
 }
+var itemsLista = document.querySelector("#itemL");
+console.log(itemsLista.children[0])
+/* função para adicionar novo item na lista */
+const AddNewItem =  () => {
+	var itemsLista = document.querySelector("#itemL");
+	itemsLista.append(itemsLista.children[0])
 
+} 
 // events 
 
 
@@ -43,3 +51,4 @@ button.addEventListener("click", addListAfterClick );
 
 input.addEventListener("keypress", addListAfterKeypress);
 
+additem.addEventListener("click",AddNewItem);

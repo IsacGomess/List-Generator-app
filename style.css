@@ -75,3 +75,6 @@ li{
 
 }
 
+#insidebt{
+  box-sizing: border-box;
+}
