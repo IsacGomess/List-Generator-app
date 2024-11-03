@@ -6,75 +6,12 @@ body{
   color: rgba(0,0,0,.5);
 }
 
-
-/*input texto*/
-.boxmodel{
-  position: absolute;
-  left: 45%;
+.principal{
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-.container{
-  width: 189px;
-  height: 100px;
-}
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
-  background-color:beige;
-}
-#enter{
-  height: 35px;
-  text-align: center;
-  margin: 0 5px;
-  border: none;
-  border-radius: 12px;
-  background-color:cadetblue;
-  color: white;
-  box-shadow: 0 0 2px wheat;
-  
-}
-#enter:hover{
-  background-color: black;
-  color:cadetblue;
-}
-#entertext{
-  justify-content: center;
-  height: 35px;
-  border-radius: 15px;
-  box-shadow: 0 0 3px black;
-  background: transparent;
-}
-
-li{
-  text-transform: capitalize;
-  margin-left: auto;
-  color: black;
-  list-style: none;
-}
-
-.btitens{
- color:red;
- padding:0;
- height: 0;
- width: 0;
- border: none;
- margin: 10px;
-}
-
-.btitens:hover{
-  text-transform: uppercase;
-  color: rgba(12, 22, 68, 0.5);
-}
-.lista{
-  display: flex;
-  justify-content: center;
-
+  flex-grow: initial;
 }
 
 #insidebt{
-  box-sizing: border-box;
+  border-radius: 15px;
+  border: solid 1px white;
 }

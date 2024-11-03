@@ -1,54 +1,27 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("entertext");
-var ol = document.querySelector(".list-group");
-var additem = document.getElementById("additem");
-
-
-
-function inputLength() {
-	return input.value.length;
-}
-
-function createListElement(e) {
-	let li = document.createElement('li');
-	li.appendChild(document.createTextNode(input.value));
-	li.setAttribute('class','list-group-item');
-	ol.appendChild(li);
-	var bt = document.createElement('button');
-	bt.className = "btitens";
-	bt.textContent = 'x';
-	li.appendChild(bt);
-	bt.addEventListener('click',function(){
-		li.remove()
-	})
-	input.value = " ";
-
-}
-
-function addListAfterClick() {
-	if (inputLength() > 0) {
-		createListElement();
-	}
-}
-
-function addListAfterKeypress(event) {
-	if (inputLength() > 0 && event.keyCode === 13) {
-		createListElement();
-	}
-}
-var itemsLista = document.querySelector("#itemL");
-console.log(itemsLista.children[0])
+const additem = document.getElementById("additem");
+const itemsLista = document.querySelector("#itemL");
+const remove = document.querySelector(".btremove");
 /* função para adicionar novo item na lista */
 const AddNewItem =  () => {
-	var itemsLista = document.querySelector("#itemL");
-	itemsLista.append(itemsLista.children[0])
+	const btnl = document.createElement('button');
+	btnl.className = "list-group-item list-group-item-action  bg-dark-subtle text-success-emphasis";
+	const ipt = document.createElement("input");
+	ipt.type = "text";
+	ipt.id = "insidebt";
+	ipt.className = "bg-transparent border-0";
+	ipt.placeholder = "item..";
 
+	btnl.appendChild(ipt);
+	itemsLista.appendChild(btnl);
 } 
+
+const RemovendoItens = (e) =>{
+	 let target = e.target
+	if(target.matches('.btremove')){
+		itemsLista.children[-1].remove()
+	}
+}
 // events 
 
-
-button.addEventListener("click", addListAfterClick );
-
-input.addEventListener("keypress", addListAfterKeypress);
-
+remove.addEventListener("click",RemovendoItens);
 additem.addEventListener("click",AddNewItem);
