@@ -1,27 +1,52 @@
-const additem = document.getElementById("additem");
-const itemsLista = document.querySelector("#itemL");
-const remove = document.querySelector(".btremove");
-/* função para adicionar novo item na lista */
-const AddNewItem =  () => {
-	const btnl = document.createElement('button');
-	btnl.className = "list-group-item list-group-item-action  bg-dark-subtle text-success-emphasis";
-	const ipt = document.createElement("input");
-	ipt.type = "text";
-	ipt.id = "insidebt";
-	ipt.className = "bg-transparent border-0";
-	ipt.placeholder = "item..";
+const board = document.getElementById('board');
+        let listCounter = 1;
 
-	btnl.appendChild(ipt);
-	itemsLista.appendChild(btnl);
-} 
+        // Função para criar uma nova caixa de lista
+        function createNewList() {
+            const listId = `list-${listCounter++}`;
+            
+            const listDiv = document.createElement('div');
+            listDiv.className = 'list-container';
+            listDiv.innerHTML = `
+                <div class="list-header">
+                    <h3 contenteditable="true">Lista ${listCounter - 1}</h3>
+                    <button class="btn-delete" onclick="this.parentElement.parentElement.remove()">✕</button>
+                </div>
+                <div class="task-input-area">
+                    <input type="text" placeholder="Nova tarefa..." id="input-${listId}">
+                    <button class="btn-task" onclick="addTask('${listId}')">Add</button>
+                </div>
+                <ul id="ul-${listId}"></ul>
+            `;
+            
+            board.appendChild(listDiv);
 
-const RemovendoItens = (e) =>{
-	 let target = e.target
-	if(target.matches('.btremove')){
-		itemsLista.children[-1].remove()
-	}
-}
-// events 
+            // Adicionar evento de "Enter" no input
+            const input = document.getElementById(`input-${listId}`);
+            input.addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    addTask(listId);
+                }
+            });
+        }
 
-remove.addEventListener("click",RemovendoItens);
-additem.addEventListener("click",AddNewItem);
+        // Função para adicionar tarefa dentro de uma lista específica
+        function addTask(listId) {
+            const input = document.getElementById(`input-${listId}`);
+            const ul = document.getElementById(`ul-${listId}`);
+            const taskText = input.value.trim();
+
+            if (taskText !== "") {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${taskText}</span>
+                    <button class="btn-delete" onclick="this.parentElement.remove()">–</button>
+                `;
+                ul.appendChild(li);
+                input.value = ""; // Limpa o campo
+                input.focus();
+            }
+        }
+
+        // Criar a primeira lista automaticamente ao carregar
+        window.onload = createNewList;
